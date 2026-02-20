@@ -10,10 +10,8 @@ source:
   sha256: 96b350c31d9f8356af81c6118596b747e0361c84dd6719d3e649af5aeb9b0266
 
 build:
-  entry_points:
-    - ratatoskr=ratatoskr.__main__:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
   run_exports:
   - {{ pin_subpackage(name|lower, max_pin="x") }}
@@ -23,20 +21,15 @@ requirements:
     - setuptools <=80
     - wheel
     - pip
-    - hatchling
   run:
-    - python {{ python_min }}
-    - pip
+    - python >={{ python_min }}
     - ncbi-datasets-cli >=18.10.2
     - biopython >=1.86
     - loguru >=0.7.2
     - polars >=1.32.2
     - pyarrow >=13.0.0
     - rich-click >=1.8.8
-    - setuptools <=80
     - tqdm >=4.66.1
-    - python-keycloak
-    - aiohttp
     - async-dsmz >=2025.0.5
     - bacdive ==1.0.0
     - lpsn ==1.0.0
