@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Fabian-Bastiaanssen/Ratatoskr/archive/v{{ version }}.tar.gz
-  sha256: ad10537c451a28f1b798af58f8f12e3d54a1ef2b1f6d02249de06361a50e1e13
+  sha256: 08c3fe0c87b6247fd363dfd8122e4eccf6707c1186cede4f1d4da9d21a9f138b
 
 build:
   noarch: python
